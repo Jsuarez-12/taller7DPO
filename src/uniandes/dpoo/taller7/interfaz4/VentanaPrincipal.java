@@ -47,10 +47,10 @@ public class VentanaPrincipal extends JFrame {
         izquierda = new PanelIzquierdo(this);
         derecha = new PanelDerecho(this);
         abajo = new PanelInferior();
-        //abajo.setPreferredSize(new Dimension(600, 100)); // Ajustar tamaño preferido
+        //abajo.setPreferredSize(new Dimension(600, 100)); // Ajustar tamaÃ±o preferido
         //abajo.setBackground(Color.cyan);
         
-        // Añadir los paneles al JFrame
+        // AÃ±adir los paneles al JFrame
         add(izquierda, BorderLayout.CENTER);
         add(arriba, BorderLayout.NORTH);
         add(derecha, BorderLayout.EAST);        
@@ -154,10 +154,16 @@ public class VentanaPrincipal extends JFrame {
 	public void verificarTop10(int puntaje) {
 		// TODO Auto-generated method stub
 		boolean enough = top.esTop10(puntaje);
-		if (enough)
+		if (enough && jugadorActual!=null)
 		{
 			top.agregarRegistro(jugadorActual, puntaje);
-			
+			try {
+	            top.salvarRecords(registros);
+	            System.out.println("Registros guardados exitosamente.");
+	        } catch (FileNotFoundException | UnsupportedEncodingException e) {
+	            System.out.println("Error al guardar los registros: " + e.getMessage());
+	            e.printStackTrace();
+	        }
 			
 		}
 	}
