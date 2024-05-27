@@ -23,7 +23,7 @@ public class PanelSuperior extends JPanel implements ActionListener {
     public PanelSuperior() {
     	
     	setBackground(new Color(150, 150, 150));
-        sizeTag = new JLabel("Tamaño");
+        sizeTag = new JLabel("TamaÃ±o");
         String[] sizesOptions = {"5x5", "7x7", "9x9"};
         sizes = new JComboBox<>(sizesOptions);
         difTag = new JLabel("Dificultad");
@@ -38,9 +38,9 @@ public class PanelSuperior extends JPanel implements ActionListener {
         add(Box.createRigidArea(new Dimension(75, 0)));
         add(difTag);
         add(Box.createRigidArea(new Dimension(15, 0)));
-        JRadioButton easyButton = addBot("Fácil");
+        JRadioButton easyButton = addBot("FÃ¡cil");
         JRadioButton mediumButton = addBot("Medio");
-        JRadioButton hardButton = addBot("Difícil");
+        JRadioButton hardButton = addBot("DifÃ­cil");
         
         easyButton.setSelected(true);
         easyButton.doClick();
@@ -91,7 +91,7 @@ public class PanelSuperior extends JPanel implements ActionListener {
     private void handleRadioButtonSelection(String selectedOption) 
     {
         switch (selectedOption) {
-            case "Fácil":
+            case "FÃ¡cil":
                 difficulty = 5;
                 // Handle Easy option
                 break;
@@ -99,8 +99,8 @@ public class PanelSuperior extends JPanel implements ActionListener {
                 difficulty = 10;
                 // Handle Medium option
                 break;
-            case "Difícil":
-                difficulty = 5;
+            case "DifÃ­cil":
+                difficulty = 20;
                 // Handle Hard option
                 break;
             default:
